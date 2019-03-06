@@ -1,5 +1,7 @@
 # Example API Restful spring-boot and spring-data (SchoolSpring)
 
+SchoolSpring is personal project for training Spring Boot and Spring Data.
+
 ## Tutorial
 
 ### Use this baseURL
