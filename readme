@@ -1,0 +1,28 @@
+BaseURL = localhost:8080/api/
+
+[STUDENT]
+/student | GET | -> get all students 
+{ request: none | respose: (200) Array students }
+
+/student | POST | -> Save student in database 
+{ request: id, name, email, class | response: (409) if exists student || (401) if invalid data || (200) student object }
+
+/student/{id} | GET | -> get student by id
+{ request: params id | response: (404) if student not found || (200) student object }
+
+/student/{id} | DELETE | -> delete student by id
+{ request: params id | response: (404) if student not found || none }
+
+/student/{id} | PUT | -> edit student by id
+{ request: params id | response: (404) if student not found || (200) student object }
+
+/student/?name= | GET -> get student by name
+{ request: params name | response: (404) if user not found || (200) Array students }
+
+[TEACHER]
+
+
+[LOGIN]
+/login | POST -> autenticate user
+{ request: login, password | response: (404) if user not found || (401) if invalid login || (401) if invalid password || (200) user TDO object
+
