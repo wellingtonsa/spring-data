@@ -1,29 +1,137 @@
-# Example spring-data (SchoolSpring)
+# Example API Restful spring-boot and spring-data (SchoolSpring)
 
-BaseURL = localhost:8080/api/
+## Tutorial
 
-[STUDENT]
-/student | GET | -> get all students 
-{ request: none | respose: (200) Array students }
+### Use this baseURL
+```
+http://localhost:8080/api/
+```
 
-/student | POST | -> Save student in database 
-{ request: id, name, email, class | response: (409) if exists student || (401) if invalid data || (200) student object }
+## [STUDENT]
 
-/student/{id} | GET | -> get student by id
-{ request: params id | response: (404) if student not found || (200) student object }
+### Get all students 
+```baseURL/student```
 
-/student/{id} | DELETE | -> delete student by id
-{ request: params id | response: (404) if student not found || none }
+#### Request 
+- Type: GET
 
-/student/{id} | PUT | -> edit student by id
-{ request: params id | response: (404) if student not found || (200) student object }
+#### Response
+- Type: JSON
+> (200) Array students
 
-/student/?name= | GET -> get student by name
-{ request: params name | response: (404) if user not found || (200) Array students }
+#### Error
+> none (if not exists students in database) </br>
 
-[TEACHER]
+### Save student in database 
+```baseURL/student```
+
+#### Request
+- Type: POST
+```
+{
+  "id": 1, 
+  "name": "Joao", 
+  "email": "joao@email.com", 
+  "class": "class_1"
+}
+```
+
+#### Response
+Type: JSON
+> (200) student object
+
+#### Error
+> (409) if exists student </br>
+> (401) if invalid data
+
+### Get student by id
+```baseURL/student/{id}```
+
+#### Request
+- Type: GET
+> params id
+
+#### Response
+Type: JSON
+> (200) student object
+
+#### Error
+> (404) if student not found </br>
+
+### Delete student by id
+```baseURL/student/{id}```
+
+#### Request
+- Type: DELETE
+> params id
+
+#### Response
+Type: JSON
+> none
+
+#### Error
+> (404) if student not found </br>
+
+### Edit student by id
+```baseURL/student/{id}```
+
+#### Request
+- Type: PUT
+```
+{
+  "name": "Maria", 
+  "email": "maria@email.com", 
+  "class": "class_2"
+}
+```
+> params id
+
+#### Response
+Type: JSON
+> (200) student object
+
+#### Error
+> (404) if student not found </br>
+
+### Get student by name
+```baseURL/student/?name=```
+
+#### Request
+- Type: GET
+> params name
+
+#### Response
+Type: JSON
+> (200) Array students
+
+#### Error
+> (404) if student not found </br>
 
 
-[LOGIN]
-/login | POST -> autenticate user
-{ request: login, password | response: (404) if user not found || (401) if invalid login || (401) if invalid password || (200) user TDO object
+
+## [TEACHER]
+
+
+## [LOGIN]
+
+### autenticate teacher
+```baseURL/login```
+
+#### Request
+- Type: POST
+```
+{
+  login: "teacher",
+  password: "123"
+}
+```
+
+#### Response
+Type: JSON
+> (200) teacher DTO
+
+#### Error
+> (404) if student not found </br>
+> (401) if invalid login </br>
+> (401) if invalid password 
+
