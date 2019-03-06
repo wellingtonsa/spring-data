@@ -37,7 +37,7 @@ http://localhost:8080/api/
 ```
 
 #### Response
-Type: JSON
+- Type: JSON
 > (200) student object
 
 #### Error
@@ -52,7 +52,7 @@ Type: JSON
 > params id
 
 #### Response
-Type: JSON
+- Type: JSON
 > (200) student object
 
 #### Error
@@ -66,7 +66,7 @@ Type: JSON
 > params id
 
 #### Response
-Type: JSON
+- Type: JSON
 > none
 
 #### Error
@@ -87,7 +87,7 @@ Type: JSON
 > params id
 
 #### Response
-Type: JSON
+- Type: JSON
 > (200) student object
 
 #### Error
@@ -127,7 +127,7 @@ Type: JSON
 ```
 
 #### Response
-Type: JSON
+- Type: JSON
 > (200) teacher DTO
 
 #### Error
