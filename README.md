@@ -114,7 +114,7 @@ Type: JSON
 
 ## [LOGIN]
 
-### autenticate teacher
+### Autenticate teacher
 ```baseURL/login```
 
 #### Request
