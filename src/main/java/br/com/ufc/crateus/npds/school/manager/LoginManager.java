@@ -19,7 +19,7 @@ public class LoginManager {
 		Teacher teacher_ = teacherRepository.findByLogin(teacher.getLogin());
 
 		if (teacher_ == null)
-			throw new UserNotFoundException(teacher.getName());
+			throw new UserNotFoundException(teacher.getLogin());
 		else if (!(teacher_.getLogin().equals(teacher.getLogin())))
 			throw new InvalidDataException("Invalid login");
 		else if (!(teacher_.getPassword().equals(teacher.getPassword())))
